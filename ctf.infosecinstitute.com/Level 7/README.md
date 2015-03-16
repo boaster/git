@@ -8,7 +8,7 @@
 
 ## Write-up
 
-The link for "Level 7" takes us to 404.php, which returns HTTP Response Code 404 Not Found. However if we follow the URI scheme from the previous levels we know that the page for each level is located at "/level<one/two/three/four/five/six/....php>". So let's not follow the link to 404.php but instead let's request /levelseven.php.
+The link for "Level 7" takes us to 404.php, which returns HTTP Response Code 404 Not Found. However if we follow the URI scheme from the previous levels we know that the page for each level is located at "/level[one|two|three|four|five|six|....php]". So let's not follow the link to 404.php but instead let's request /levelseven.php.
 
 ```bash
 $ curl -v http://ctf.infosecinstitute.com/levelseven.php

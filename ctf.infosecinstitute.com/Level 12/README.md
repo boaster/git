@@ -14,8 +14,8 @@ $
 ```
 After confirming both images are identical, I knew the flag was not in the image, so it had to be somewhere else. Next I checked the source code from level 1 for differences.
 ```bash
-$ curl http://ctf.infosecinstitute.com/levelone.php | head > [levelone_source](levelone_source)
-$ curl http://ctf.infosecinstitute.com/leveltwelve.php | head > [leveltwelve_source](leveltwelve_source)
+$ curl http://ctf.infosecinstitute.com/levelone.php | head > levelone_source
+$ curl http://ctf.infosecinstitute.com/leveltwelve.php | head > leveltwelve_source
 $ diff leveltwelve_source levelone_source
 0a1
 > <!-- infosec_flagis_welcome -->

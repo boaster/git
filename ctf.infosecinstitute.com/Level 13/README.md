@@ -76,7 +76,7 @@ IP Addresses            710       0.005819
 $
 ```
 
-Again, just like Level 6, we see a lot of traffic from 127.0.0.1, this time it's mostly HTTP. We know that abnormal, so let's extract all the HTTP objects from the whole pcap. Open wireshark, load the pcap and select File -> Export Object -> HTTP. Now save to a new directory. This will save all the files transfered via HTTP.
+Again, just like Level 6, we see a lot of traffic from 127.0.0.1, this time it's mostly HTTP. We know that abnormal, so let's extract all the HTTP objects from the whole pcap. Open wireshark, load the pcap and select File -> Export Object -> HTTP. Now "Save All" to a new directory. This will save all files transfered via HTTP.
 
 ```bash
 $ ls imadecoy_extract/
@@ -84,5 +84,5 @@ Fixedsys500c.woff back.gif          bootstrap.css     custom.css        honeypy 
 HoneyPY.PNG       blank.gif         bootstrap.min.js  favicon.ico       honeypy(1)        img               jquery.js
 $
 ```
-Browsing to the directory and opening the [HoneyPY.PNG](HoneyPY.PNG) file, we see the flag
+Browsing to the directory and opening the [HoneyPY.PNG](HoneyPY.PNG) file, we see the flag.
 infosec_flagis_morepackets

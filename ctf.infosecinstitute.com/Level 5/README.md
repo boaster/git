@@ -7,7 +7,7 @@
 ## Write-up
 
 Upon loading the web page, we get a JavaScript loop with alert event. Instead I used curl to view the site. The source contained a link to an [image](aliens.jpg).
-Downloading the [image](aliens.jpg) and running Steganography tool steghide I was able to extract text file "[all.txt]"(all.txt). The file contained representation of binary data. Upon converting the binary digits to ascii we get the flag.
+Downloading the [image](aliens.jpg) and running Steganography tool steghide I was able to extract text file [all.txt](all.txt). The file contained representation of binary data. Upon converting the binary digits to ascii we get the flag.
 
 ```bash
 $ steghide extract -sf aliens.jpg

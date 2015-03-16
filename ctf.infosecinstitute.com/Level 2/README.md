@@ -6,7 +6,7 @@
 
 ## Write-up
 
-Upon loading the web page, we see the link in the middle of the page as broken. By downloading the jpeg image, we see that the web server returns a base64 encoded string instead of a jpg image. Decoding the base64 encoded string, provides us with the flag.
+Upon loading the web page, we see the link in the middle of the page is broken. By downloading the jpg image, we see that the web server returns a base64 encoded string instead of a jpg image. Decoding the base64 encoded string, provides us with the flag.
 
 ```bash
 $ curl http://ctf.infosecinstitute.com/img/leveltwo.jpeg

@@ -38,3 +38,5 @@ Decoding the string gives us the flag.
 $ echo -n 'aW5mb3NlY19mbGFnaXNfeW91Zm91bmRpdA==' | base64 -d
 infosec_flagis_youfoundit
 ```
+## Links
+* <http://ctf.infosecinstitute.com/404.php>

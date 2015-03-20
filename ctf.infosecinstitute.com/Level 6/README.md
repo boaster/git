@@ -22,3 +22,5 @@ This doesn't look like NETBIOS traffic at all, right ? Let's convert from hex to
 $ python -c 'print("\x69\x6e\x66\x6f\x73\x65\x63\x5f\x66\x6c\x61\x67\x69\x73\x5f\x73\x6e\x69\x66\x66\x65\x64")'
 infosec_flagis_sniffed
 ```
+## Links
+* <http://ctf.infosecinstitute.com/levelsix.php>

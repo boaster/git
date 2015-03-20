@@ -24,3 +24,6 @@ http://www.rollerski.co.uk/imagesb/powerslide_logo_large.gif
 
 Downloading the [gif](powerslide_logo_large.gif) from the extracted link, and opening it, it display's  "powerslide". So the flag becomes:
 infosec_flagis_powerslide
+## Links
+* <http://ctf.infosecinstitute.com/leveleleven.php>
+

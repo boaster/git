@@ -16,4 +16,6 @@ After successfully logon we are presented with the following JavaScript alert me
 $ python -c "print 'ssaptluafed_sigalf_cesofni' [::-1]"
 infosec_flagis_defaultpass
 ```
+## Links
+* <http://ctf.infosecinstitute.com/levelnine.php>
 

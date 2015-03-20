@@ -36,3 +36,6 @@ Yep, we got it. Since the hex encoded strings is actually an "id selector" in CS
 $ python -c 'print("\x69\x6e\x66\x6f\x73\x65\x63\x5f\x66\x6c\x61\x67\x69\x73\x5f\x68\x65\x79\x69\x6d\x6e\x6f\x74\x61\x63\x6f\x6c\x6f\x72")'
 infosec_flagis_heyimnotacolor
 ```
+## Links
+* <http://ctf.infosecinstitute.com/leveltwelve.php>
+

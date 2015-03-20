@@ -2,7 +2,7 @@
 **Bounty:** $100
 **Description:**
 
-> What kind of sound is this? Sorcery perhaps?? ["<listen>"](Flag.wav)
+> What kind of sound is this? Sorcery perhaps?? ["listen"](Flag.wav)
 
 ## Write-up
 

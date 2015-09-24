@@ -1,0 +1,58 @@
+startup_message off
+vbell off
+
+hardstatus alwayslastline "%{=b}%{G} %{b}%w %=%{kG}%C%A %D,%d/%m/%y"
+shelltitle "Shell"
+
+defscrollback 5024
+
+# Window numbering starts at 1, not 0.
+bind c screen 1
+bind 0 select 10
+escape ^bb
+# Look and feel
+caption always "%{= 2m}%{+b w}Screen: %n | %h %=%t %D %d/%m/%y %c:%s"
+hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%< %=% [%{=b)%{Y}%l%{g}]"
+
+# Our warning of activity
+activity "Activity in %t(%n)"
+
+# Left Right meta key mods
+# ALT -,. and ALT -<>
+
+bindkey "^[<" eval number !echo $WINDOW-1|bc
+bindkey "^[>" eval number !echo $WINDOW+1|bc
+bindkey "^[," prev
+bindkey "^[." next
+
+select 1
+
+autodetach on
+
+# pgup pgdown
+
+termcapinfo xterm*|rxvt* 'ti@:te@'
+
+bind R screen -t '% |root:' sudo bash
+bind 'K' kill
+
+msgwait 15
+
+# termcap stuff
+# termcapinfo xterm ti@:te@
+# make the cursor show up in red:
+# termcapinfo linux "ve=\E[?25h\E[?17;0;64c"
+
+bind = resize =
+bind + resize +1
+bind - resize -1
+
+screen -t Shell 1 bash
+screen -t Shell 2 bash
+screen -t Shell 3 bash
+screen -t Shell 4 bash
+screen -t Shell 5 bash
+screen -t Shell 6 bash
+screen -t Shell 7 bash
+screen -t Shell 8 bash
+screen -t Shell 9 bash

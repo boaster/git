@@ -1,0 +1,4 @@
+unzip all the apps and the Mach-O executable contains a string for the flag in the disassembly (find it close to the goodboy msg print)
+
+
+PAN{EZE_S41d_Th15_w4s_Ea5y}

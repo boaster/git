@@ -1,0 +1,46 @@
+#!/usr/bin/env python
+
+'''
+PAN{dis.C@1c's.Ju51.4.Y0UZ?!?}
+ROM:D9B4                 ld      hl, 0xD842       ; Move o1 <- o2
+ROM:D9B7                 ld      bc, 0x5429       ; Move o1 <- o2
+ROM:D9BA                 call    transform
+
+ROM:DDF2                                         ; 
+ROM:DDF2                 ld      a, 3Fh ; '?'    ; 
+ROM:DDF4                 sub     c               ; a = 0x16
+ROM:DDF5                 ld      c, a            ; c = 0x16 bc = 0x5416
+ROM:DDF6                 push    hl              ; 
+ROM:DDF7                 call    transform_2  
+
+ROM:DDD7 transform_2:                            ; 
+ROM:DDD7                 ld      h, 3Fh ; '?'    ; h = 0x3f
+ROM:DDD9                 ld      a, c            ; a = 0x16
+ROM:DDDA                 add     a, a            ; a = 0x2c
+ROM:DDDB                 add     a, a            ; a = 0x58
+ROM:DDDC                 ld      l, a            ; l = 0x58
+ROM:DDDD                 ld      a, b            ; a = 0x54
+ROM:DDDE                 rra                     ; 01010100 = 00101010 ; CF = 0 ; 0x2a (maybe div by 2)
+ROM:DDDF                 add     hl, hl          ; hl = 0x7eb0
+ROM:DDE0                 rra                     ; 00101010 = 00010101 ; CF = 0 ; 0x15 
+ROM:DDE1                 add     hl, hl          ; hl = 0xfd60
+ROM:DDE2                 rra                     ; 00010101 = 10001010 ; CF = 1 ; 0x8a
+ROM:DDE3                 or      l               ; hex(0x60 | 0x8a) ; 0xea
+ROM:DDE4                 ld      l, a            ; l = 0xea
+ROM:DDE5                 ld      a, b            ; a = 0x54
+ROM:DDE6                 and     7               ; hex(0x54 & 7) ; 0x4
+ROM:DDE8                 ld      bc, 0DE20h      ; bc = 0xde20
+ROM:DDEB                 add     a, c            ; a = 0x24
+ROM:DDEC                 ld      c, a            ; c = 0x24
+ROM:DDED                 adc     a, b            ; hex((0xde + 0x24 + 1) & 0xff) ; 0x3
+ROM:DDEE                 sub     c               ; a = 0xdf
+ROM:DDEF                 ld      b, a            ; b = 0xdf
+ROM:DDF0                 ld      a, (bc)         ; 0xdf24
+ROM:DDF1                 ret                     ; 
+ROM:DDF1 ; End of function transform_2
+
+
+'''
+
+def t_2(s):
+	return

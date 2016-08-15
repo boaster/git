@@ -1,0 +1,62 @@
+len + len + 0x20
+0x101362580
+
+1. my input is base64 encoded				PAN{AAAAAAAAAAAAAAAA}  / UEFOe0FBQUFBQUFBQUFBQUFBQUF9
+2. input is xored with "av9vex8pocs4id2"                             av9vex8pocs4id2av9vex8pocs4i
+
+		0x1013625a0: 0x0039007f00330034 0x0032007e00480000
+		0x1013625b0: 0x007600350036003e 0x0023007400310038
+		0x1013625c0: 0x00270030006c0027 0x002d0036006d0029
+		0x1013625d0: 0x0050007200260032 0x7c7c7c7c7c7c7c7c
+
+3. initWithCharacters:length is called with the new char buffer and length of input
+
+		0x1014afa50: 0x7e4800397f33341c 0x7431387635363e32   < which is the same as xored output
+		0x1014afa60: 0x366d2927306c2723 0x000000507226322d
+
+4. base64 encodevame go
+
+		>>> 'NDN/OQBIfjI+NjV2ODF0IydsMCcpbTYtMiZyUA==SN'.decode('base64').encode('hex')
+		'34337f3900487e323e36357638317423276c3027296d362d32267250'
+		>>>
+
+5. xor above base64 with "abracadabra"
+
+		>>> a = 'NDN/OQBIfjI+NjV2ODF0IydsMCcpbTYtMiZyUA==SN'
+		>>> b = 'abracadabra'
+		>>> c = ''
+		>>> for i in range(len(a)):
+		...     c += chr( ord(a[i]) ^ ord(b[i % len(b)]) )
+		...
+		>>> c
+		'/&<N,0&(\x04\x18(J,\x187Q. \'R;\x18\x05\x11?"\x00\x11\x065;\x06,\x088\x0b4"\\Y2,'
+		>>> c.encode('hex')
+		'2f263c4e2c3026280418284a2c1837512e2027523b1805113f22001106353b062c08380b34225c59322c'
+		>>> c.encode('base64')
+		'LyY8TiwwJigEGChKLBg3US4gJ1I7GAURPyIAEQY1OwYsCDgLNCJcWTIs\n'
+		>>>
+
+-------------------------------------------------------------------------
+
+>>> ct = 'LyY8TiwwJighJzRSNycvJyU3LzQ1GTc0JlA2ACcGBTcuUSc3JBkZLSoaS1EzUwotBwsDDTQbEiY3Mw0SNDcZVjcLKywjCTpKPApWTw=='.decode('base64')
+>>> a = 'abracadabra'
+>>> b = ''
+>>> for i in range(len(ct)):
+...     b += chr( ord(ct[i]) ^ ord(a[i % len(a)]) )
+...
+>>> b
+'NDN/OQBICUU3UUNDDSNVGxVVT1UaCggEO0EEEzxIKx90R1xLdjglVisGUAlqUSx4EjJNQhY+Xk4='
+>>> b.decode('base64')
+'43\x7f9\x00H\tE7QCC\r#U\x1b\x15UOU\x1a\n\x08\x04;A\x04\x13<H+\x1ftG\\Kv8%V+\x06P\tjQ,x\x122MB\x16>^N'
+>>> nct = b.decode('base64')
+>>> a = 'av9vex8pocs4id2'
+>>> f = ''
+>>> for i in range(len(nct)):
+...     f += chr( ord(nct[i]) ^ ord(a[i % len(a)]) )
+...
+>>> f
+'UEFOe015X20wdGgzcl90b2xkX20zXzJiM193NHJ5X29mX0ZAdW5zfQ=='
+>>> f.decode('base64')
+'PAN{My_m0th3r_told_m3_2b3_w4ry_of_F@uns}'
+>>>
+

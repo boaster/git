@@ -1,0 +1,3 @@
+# add www.example.com to /etc/hosts with 127.0.0.1
+
+sudo nc -vvv -l 127.0.0.1 80  < labyrenth-2016-unix-2.txt

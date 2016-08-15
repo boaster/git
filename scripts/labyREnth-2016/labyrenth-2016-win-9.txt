@@ -1,0 +1,79 @@
+Instructions:
+1. dump the packed binary
+1.1 can be dumped by breaking on VirtAlloc with 0x400000 for the new image
+1.2 Navigate to the new PE header to see the OEP address and break there
+2. load dumped unpacked binary into Resource Hacker and DeDe to see the address of the procedure
+that gets executed when the check button is pressed
+3. build a test case and debug the procedure or do it statically from here
+4. Good resource: http://octopuslabs.io/legend/blog/archives/1472/1472.htm
+
+flag: PAN{d3lphi_is_e4sy_t0_rev3rSE}
+
+
+PAN{
+0xcf ^ 0xab			d
+0x2d ^ 0x1e   		3
+0x3e ^ 0x52			l
+0x52 ^ 0x22			p
+0x60 ^ 8			h
+0x69				i
+0xba ^ 0xe5			_
+0xbe ^ 0xd7			i
+0xe6 / 2			s
+0x2f << 1			_
+0x194 >> 2			e
+(0x19 << 1) + 2		4
+(0x1c0 ^ 0xc) >> 2	s
+(0x28 + 7) << 1		_
+???					t
+0x60 / 2			0
+0x17c >> 2			_
+(0x59 ^ 0x60) << 1	r	
+(0x42 ^ 0x88) / 2	e
+(0xc0 ^ 0x2c) / 2	v
+(0x16 << 1) + 7		3
+???					r
+((0x130f0 >> 3) ^ 0x2486) >> 3	S
+???								E
+}
+
+
+>>> for i in range(0x20, 0x7d):
+...     a = i >> 3
+...     a *= 2
+...     a = a + a * 4
+...     if a == 0x8c:
+...             print chr(i)
+...
+p
+q
+r
+s
+t
+u
+v
+w
+>>>
+
+
+
+>>> for i in range(0x20, 0x7d):
+...     a = i * 2
+...     a = a + a * 2
+...     a ^= 0x29a
+...     if a == 0x36:
+...             print chr(i)
+...
+r
+>>>
+
+>>> for i in range(0x20, 0x7d):
+...     a = i + i * 2
+...     a <<= 4
+...     a ^= 0x25a0
+...     if a == 0x2950:
+...             print chr(i)
+...
+E
+>>>
+

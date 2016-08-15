@@ -1,0 +1,21 @@
+➜  PDF pdfinfo -js ./gooby.pdf
+Creator:        CurtOS PDF Editor .00001
+CreationDate:   Sat Apr 14 00:00:00 1990
+Tagged:         no
+UserProperties: no
+Suspects:       no
+Form:           AcroForm
+JavaScript:     yes
+Pages:          1
+Encrypted:      no
+Page size:      900 x 500 pts
+Page rot:       0
+File size:      119412 bytes
+Optimized:      no
+PDF version:    1.7
+
+Calculate Field:
+if(event.value=="PAN{g0obygo0byd00wh3r3ru?}"){app.alert("yes");}else{app.alert("no");}
+
+
+➜  PDF

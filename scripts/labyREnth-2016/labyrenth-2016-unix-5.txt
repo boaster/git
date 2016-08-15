@@ -1,0 +1,29 @@
+flag: PAN{Gr0und_C0ntr01_2_M@j0r_T0m!}
+
+(lldb)
+Process 20306 stopped
+* thread #1: tid = 0xf1938, 0x0000000100283050 krypto.danger`krypto.get_pw () -> Swift.String + 2368, queue = 'com.apple.main-thread', stop reason = instruction step over
+    frame #0: 0x0000000100283050 krypto.danger`krypto.get_pw () -> Swift.String + 2368
+    krypto.danger`krypto.get_pw () -> Swift.String:
+    ->  0x100283050 <+2368>: mov    rax, qword ptr [rbp - 0xd8]
+        0x100283057 <+2375>: mov    rdx, qword ptr [rbp - 0xd0]
+	    0x10028305e <+2382>: mov    rsi, qword ptr [rbp - 0xc8]
+	        0x100283065 <+2389>: mov    cl, byte ptr [rbp - 0xc0]
+		(lldb) x/10gx $rbp-0xd8
+		0x7fff5fbfead8: 0x0000000100602c71 0x4000000000000020
+		0x7fff5fbfeae8: 0x0000000100602c60 0x0000000000000000
+		0x7fff5fbfeaf8: 0x0000000100707af0 0x0000000100000001
+		0x7fff5fbfeb08: 0x0000000100564000 0x0000000101300000
+		0x7fff5fbfeb18: 0x0000000000000000 0x0000000000000000
+		(lldb) x/10gx 0x0000000100602c71
+		0x100602c71: 0x753072477b4e4150 0x72746e30435f646e
+		0x100602c81: 0x6a404d5f325f3130 0x7d216d30545f7230
+		0x100602c91: 0x0000000000000000 0x0000000000000000
+		0x100602ca1: 0x0000000000000000 0x0c00000000000000
+		0x100602cb1: 0x0000000001006000 0x6900000000000000
+		(lldb) x/s 0x0000000100602c71
+		0x100602c71: "PAN{Gr0und_C0ntr01_2_M@j0r_T0m!}"
+		(lldb)
+
+
+

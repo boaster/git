@@ -1,0 +1,7 @@
+flag: PAN{Exc3l4=3x7r3me1y4An7a5+!c}
+
+Hidden workbook secret and supersecret can be revealed with the use of VBA Script in:
+https://www.excelcampus.com/vba/unhide-multiple-sheets-excel/
+Once supersecret is revealed field F13 contains the password check
+instead of EXACT(str, str2) which works as strcmp switch that with ALERT() and remove str2.
+Then the flag will pop up in an alert msg box.

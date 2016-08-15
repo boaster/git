@@ -1,0 +1,7 @@
+make a small swipes  (<= 50 pixesls) in the following directions:
+down->up
+right->left
+up->down
+left->right
+down->up
+
